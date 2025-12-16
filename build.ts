@@ -34,34 +34,49 @@ for (const file of filesToCopy) {
 
 // Create icons directory if it doesn't exist
 const iconsDir = join(distDir, "icons");
+const srcIconsDir = join(srcDir, "icons");
 if (!existsSync(iconsDir)) {
   mkdirSync(iconsDir, { recursive: true });
 }
 
-// Check if icons exist, if not, try to generate them
+// Copy icons from source if they exist, otherwise generate them
 const icon16 = join(iconsDir, "icon16.png");
 const icon48 = join(iconsDir, "icon48.png");
 const icon128 = join(iconsDir, "icon128.png");
 
-if (!existsSync(icon16) || !existsSync(icon48) || !existsSync(icon128)) {
+const srcIcon16 = join(srcIconsDir, "icon16.png");
+const srcIcon48 = join(srcIconsDir, "icon48.png");
+const srcIcon128 = join(srcIconsDir, "icon128.png");
+
+// Copy icons from source if they exist
+if (existsSync(srcIcon16) && existsSync(srcIcon48) && existsSync(srcIcon128)) {
+  copyFileSync(srcIcon16, icon16);
+  copyFileSync(srcIcon48, icon48);
+  copyFileSync(srcIcon128, icon128);
+  console.log("✓ Copied icons from source");
+} else if (!existsSync(icon16) || !existsSync(icon48) || !existsSync(icon128)) {
   console.log("⚠ Icons not found. Attempting to generate them...");
   try {
-    // Import and run the icon generation
-    const { spawn } = await import("child_process");
-    const { promisify } = await import("util");
-    const exec = promisify(spawn);
-    
     const result = await $`bun run generate-icons.ts`.quiet();
     if (result.exitCode === 0) {
       console.log("✓ Icons generated successfully");
+      // Copy generated icons to dist
+      if (existsSync(srcIcon16)) copyFileSync(srcIcon16, icon16);
+      if (existsSync(srcIcon48)) copyFileSync(srcIcon48, icon48);
+      if (existsSync(srcIcon128)) copyFileSync(srcIcon128, icon128);
     } else {
-      console.log("⚠ Could not auto-generate icons. Run 'bun run generate-icons' manually.");
+      console.log(
+        "⚠ Could not auto-generate icons. Run 'bun run generate-icons' manually."
+      );
     }
   } catch (error) {
-    console.log("⚠ Could not auto-generate icons. Run 'bun run generate-icons' manually.");
+    console.log(
+      "⚠ Could not auto-generate icons. Run 'bun run generate-icons' manually."
+    );
   }
 }
 
-console.log("\n✅ Build complete! Extension files are in the 'dist' directory.");
+console.log(
+  "\n✅ Build complete! Extension files are in the 'dist' directory."
+);
 console.log("📦 Load the 'dist' directory as an unpacked extension in Chrome.");
-

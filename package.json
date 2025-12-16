@@ -6,7 +6,8 @@
   "scripts": {
     "build": "bun run build.ts",
     "dev": "bun run build.ts --watch",
-    "generate-icons": "bun run generate-icons.ts"
+    "generate-icons": "bun run generate-icons.ts",
+    "package": "bun run package.ts"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.268",
