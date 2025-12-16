@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy - CSP Bypass Search Extension</title>
+    <style>
+      :root {
+        --bg: #0b0d10;
+        --card: #101419;
+        --muted: #a6b0c0;
+        --text: #e7edf5;
+        --border: #212934;
+        --accent: #66f0a7;
+        --accent-strong: #3ee68f;
+        --ring: rgba(102, 240, 167, 0.45);
+        --shadow: 0 10px 25px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.3);
+        --radius: 16px;
+        --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter,
+          "Helvetica Neue", Arial;
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #f6f7f9;
+          --card: #ffffff;
+          --muted: #5b6470;
+          --text: #11161c;
+          --border: #e8edf3;
+          --accent: #1fb87a;
+          --accent-strong: #149b66;
+          --ring: rgba(31, 184, 122, 0.3);
+          --shadow: 0 10px 24px rgba(16, 24, 40, 0.08),
+            0 2px 8px rgba(16, 24, 40, 0.06);
+        }
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--sans);
+        color: var(--text);
+        background: radial-gradient(
+            1200px 500px at 10% -10%,
+            rgba(102, 240, 167, 0.12),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 500px at 110% 10%,
+            rgba(102, 206, 240, 0.12),
+            transparent 60%
+          ),
+          var(--bg);
+        background-attachment: fixed;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.6;
+        padding: 2rem 1rem;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.02),
+            rgba(255, 255, 255, 0)
+          ),
+          var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 3rem 2.5rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        color: var(--text);
+      }
+
+      .subtitle {
+        color: var(--muted);
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--text);
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.5rem;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: var(--text);
+      }
+
+      p {
+        margin-bottom: 1rem;
+        color: var(--text);
+      }
+
+      ul,
+      ol {
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--text);
+      }
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+
+      code {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+        font-size: 0.9em;
+        color: var(--accent);
+      }
+
+      .highlight {
+        background: rgba(102, 240, 167, 0.1);
+        padding: 0.1rem 0.3rem;
+        border-radius: 4px;
+        color: var(--accent);
+      }
+
+      .footer {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border);
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .footer a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+
+      .last-updated {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+        font-style: italic;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 2rem 1.5rem;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        h2 {
+          font-size: 1.3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">CSP Bypass Search Chrome Extension</p>
+      <p class="last-updated">Last updated: 16/12/2025</p>
+
+      <h2>1. Introduction</h2>
+      <p>
+        This Privacy Policy describes how the CSP Bypass Search Chrome Extension
+        ("the Extension", "we", "our") handles information when you use our
+        extension. We are committed to protecting your privacy and being
+        transparent about our data practices.
+      </p>
+
+      <h2>2. Information We Collect</h2>
+      <p>
+        The Extension is designed with privacy in mind. We collect
+        <strong>minimal data</strong> and only what is necessary for the
+        extension to function:
+      </p>
+
+      <h3>2.1 Content Security Policy (CSP) Headers</h3>
+      <p>
+        The Extension reads Content Security Policy headers from web pages you
+        visit. This information is:
+      </p>
+      <ul>
+        <li>
+          Stored temporarily in memory (by browser tab ID) while you have the
+          page open
+        </li>
+        <li>Used solely to provide CSP bypass suggestions</li>
+        <li><strong>Never transmitted to external servers</strong></li>
+        <li>Automatically deleted when you close the browser tab</li>
+      </ul>
+      <p>
+        CSP headers are public information that websites send to your browser.
+        We do not collect any personal information from these headers.
+      </p>
+
+      <h3>2.2 Local Storage</h3>
+      <p>
+        The Extension uses Chrome's local storage to cache data locally on your
+        device:
+      </p>
+      <ul>
+        <li>
+          <strong>CSP Bypass Data Cache</strong>: Public TSV data fetched from
+          GitHub is cached locally for 6 hours to minimize network requests
+        </li>
+        <li>
+          <strong>Last Query</strong>: Your last search query is stored locally
+          to restore it when you reopen the extension
+        </li>
+      </ul>
+      <p>
+        All data stored locally remains on your device and is never transmitted
+        to external servers (except for fetching the public data file from
+        GitHub, as described below).
+      </p>
+
+      <h2>3. How We Use Information</h2>
+      <p>
+        The information we collect is used exclusively for the following
+        purposes:
+      </p>
+      <ul>
+        <li>To detect and display CSP headers from web pages you visit</li>
+        <li>To search and display relevant CSP bypass suggestions</li>
+        <li>
+          To cache data locally to improve performance and reduce network
+          requests
+        </li>
+        <li>To restore your last search query when you reopen the extension</li>
+      </ul>
+
+      <h2>4. Data Sharing and Third-Party Services</h2>
+      <p>
+        We do <strong>not sell, trade, or share</strong> your information with
+        third parties. The Extension:
+      </p>
+      <ul>
+        <li>
+          Fetches public CSP bypass data from
+          <code
+            >https://raw.githubusercontent.com/renniepak/CSPBypass/refs/heads/main/data.tsv</code
+          >
+        </li>
+        <li>
+          This is a public GitHub repository, and the data fetched is
+          non-personal, technical information about CSP bypass techniques
+        </li>
+        <li>No personal information is transmitted during this fetch</li>
+        <li>Data is cached locally for 6 hours to minimize requests</li>
+      </ul>
+
+      <h2>5. Permissions Explained</h2>
+      <p>The Extension requires the following permissions to function:</p>
+      <ul>
+        <li>
+          <strong><code>clipboardWrite</code></strong
+          >: Allows copying CSP bypass payloads to your clipboard when you click
+          on results
+        </li>
+        <li>
+          <strong><code>storage</code></strong
+          >: Used to cache CSP bypass data locally and store your last search
+          query
+        </li>
+        <li>
+          <strong><code>tabs</code></strong
+          >: Required to read CSP headers from the current active tab
+        </li>
+        <li>
+          <strong><code>webRequest</code></strong
+          >: Used to intercept HTTP response headers to detect CSP headers
+        </li>
+        <li>
+          <strong><code>scripting</code></strong
+          >: Used to read CSP headers from HTML meta tags on web pages
+        </li>
+        <li>
+          <strong><code>host_permissions</code></strong>
+          (<code>&lt;all_urls&gt;</code>): Required to read CSP headers from any
+          website you visit
+        </li>
+      </ul>
+      <p>
+        These permissions are necessary for the Extension's core functionality.
+        We do not use these permissions to collect personal information or track
+        your browsing behavior.
+      </p>
+
+      <h2>6. Data Security</h2>
+      <p>
+        All data collected by the Extension is stored locally on your device
+        using Chrome's secure local storage API. We do not maintain any external
+        servers or databases that store your information.
+      </p>
+
+      <h2>7. Data Retention</h2>
+      <p>Data is retained as follows:</p>
+      <ul>
+        <li>
+          <strong>CSP Headers</strong>: Stored in memory only while a browser
+          tab is open; deleted immediately when the tab is closed
+        </li>
+        <li>
+          <strong>Cached TSV Data</strong>: Cached locally for 6 hours, then
+          automatically refreshed from GitHub
+        </li>
+        <li>
+          <strong>Last Query</strong>: Stored locally until you clear your
+          browser's extension data or uninstall the extension
+        </li>
+      </ul>
+      <p>
+        You can delete all stored data at any time by uninstalling the extension
+        or clearing extension data in Chrome's settings.
+      </p>
+
+      <h2>8. Your Rights</h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li>
+          Uninstall the Extension at any time, which will delete all locally
+          stored data
+        </li>
+        <li>
+          Clear extension data through Chrome's settings (chrome://extensions →
+          Details → Remove)
+        </li>
+        <li>Review this Privacy Policy at any time</li>
+      </ul>
+
+      <h2>9. Children's Privacy</h2>
+      <p>
+        The Extension is intended for security researchers, ethical hackers, and
+        penetration testers. We do not knowingly collect information from
+        children under 13. If you believe we have inadvertently collected such
+        information, please contact us immediately.
+      </p>
+
+      <h2>10. Changes to This Privacy Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. We will notify you
+        of any changes by updating the "Last updated" date at the top of this
+        page. You are advised to review this Privacy Policy periodically for any
+        changes.
+      </p>
+
+      <h2>11. Contact Us</h2>
+      <p>
+        If you have any questions about this Privacy Policy or the Extension's
+        data practices, please contact us:
+      </p>
+      <ul>
+        <li><strong>Developer</strong>: Gerardo Sabetta</li>
+        <li>
+          <strong>GitHub</strong>:
+          <a
+            href="https://github.com/gerardosabetta"
+            target="_blank"
+            rel="noopener"
+            >github.com/gerardosabetta</a
+          >
+        </li>
+      </ul>
+
+      <h2>12. Purpose and Ethical Use</h2>
+      <p>
+        This Extension is designed for <strong>ethical purposes only</strong>.
+        It is intended to help:
+      </p>
+      <ul>
+        <li>Security researchers identify potential CSP misconfigurations</li>
+        <li>
+          Ethical hackers and penetration testers perform authorized security
+          assessments
+        </li>
+        <li>
+          Web developers understand and improve their Content Security Policy
+          implementations
+        </li>
+      </ul>
+      <p>
+        <strong>Important</strong>: Always ensure you have permission to test
+        any website or system. Follow all applicable laws and responsible
+        disclosure practices. The developers of this Extension are not
+        responsible for any misuse of this tool.
+      </p>
+
+      <div class="footer">
+        <p>
+          CSP Bypass Search Extension Privacy Policy<br />
+          <a
+            href="https://github.com/gerardosabetta/CSPBypass"
+            target="_blank"
+            rel="noopener"
+            >View on GitHub</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
