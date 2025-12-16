@@ -195,34 +195,33 @@
 
       <h2>2. Information We Collect</h2>
       <p>
-        The Extension is designed with privacy in mind. We collect
-        <strong>minimal data</strong> and only what is necessary for the
-        extension to function:
+        <strong>We do not collect, store, or transmit any information.</strong>
+        The Extension operates entirely locally on your device:
       </p>
 
       <h3>2.1 Content Security Policy (CSP) Headers</h3>
       <p>
         The Extension reads Content Security Policy headers from web pages you
-        visit. This information is:
+        visit directly in your browser. This information:
       </p>
       <ul>
         <li>
-          Stored temporarily in memory (by browser tab ID) while you have the
-          page open
+          Is processed entirely in your browser's memory while you have the page
+          open
         </li>
-        <li>Used solely to provide CSP bypass suggestions</li>
-        <li><strong>Never transmitted to external servers</strong></li>
-        <li>Automatically deleted when you close the browser tab</li>
+        <li>Is used solely to provide CSP bypass suggestions</li>
+        <li><strong>Never leaves your device</strong></li>
+        <li>Is automatically cleared when you close the browser tab</li>
       </ul>
       <p>
         CSP headers are public information that websites send to your browser.
-        We do not collect any personal information from these headers.
+        We do not collect, store, or transmit this information.
       </p>
 
       <h3>2.2 Local Storage</h3>
       <p>
-        The Extension uses Chrome's local storage to cache data locally on your
-        device:
+        The Extension uses Chrome's local storage API to cache data locally on
+        your device for performance:
       </p>
       <ul>
         <li>
@@ -235,25 +234,38 @@
         </li>
       </ul>
       <p>
-        All data stored locally remains on your device and is never transmitted
-        to external servers (except for fetching the public data file from
-        GitHub, as described below).
+        All data stored locally remains on your device only. We do not have
+        access to this data, and it is never transmitted to us or any external
+        servers (except for fetching the public data file from GitHub, which is
+        a standard HTTP request with no personal information).
       </p>
 
-      <h2>3. How We Use Information</h2>
-      <p>
-        The information we collect is used exclusively for the following
-        purposes:
-      </p>
+      <h2>3. How the Extension Works</h2>
+      <p>The Extension operates entirely locally on your device:</p>
       <ul>
-        <li>To detect and display CSP headers from web pages you visit</li>
-        <li>To search and display relevant CSP bypass suggestions</li>
         <li>
-          To cache data locally to improve performance and reduce network
+          Reads CSP headers from web pages you visit (processed in your browser
+          only)
+        </li>
+        <li>
+          Searches and displays relevant CSP bypass suggestions from locally
+          cached data
+        </li>
+        <li>
+          Caches public data locally to improve performance and reduce network
           requests
         </li>
-        <li>To restore your last search query when you reopen the extension</li>
+        <li>
+          Stores your last search query locally to restore it when you reopen
+          the extension
+        </li>
       </ul>
+      <p>
+        <strong
+          >We do not receive, access, or use any of this information.</strong
+        >
+        Everything happens on your device.
+      </p>
 
       <h2>4. Data Sharing and Third-Party Services</h2>
       <p>
@@ -314,9 +326,10 @@
 
       <h2>6. Data Security</h2>
       <p>
-        All data collected by the Extension is stored locally on your device
-        using Chrome's secure local storage API. We do not maintain any external
-        servers or databases that store your information.
+        The Extension stores data locally on your device using Chrome's secure
+        local storage API. We do not maintain any external servers or databases.
+        Since we don't collect any information, there is no data for us to
+        secure or protect.
       </p>
 
       <h2>7. Data Retention</h2>
@@ -357,9 +370,8 @@
       <h2>9. Children's Privacy</h2>
       <p>
         The Extension is intended for security researchers, ethical hackers, and
-        penetration testers. We do not knowingly collect information from
-        children under 13. If you believe we have inadvertently collected such
-        information, please contact us immediately.
+        penetration testers. Since we do not collect any information, this
+        section does not apply.
       </p>
 
       <h2>10. Changes to This Privacy Policy</h2>
