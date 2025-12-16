@@ -1,0 +1,19 @@
+{
+  "name": "cspbypass-extension",
+  "version": "1.0.0",
+  "description": "Chrome extension for CSP Bypass Search",
+  "type": "module",
+  "scripts": {
+    "build": "bun run build.ts",
+    "dev": "bun run build.ts --watch",
+    "generate-icons": "bun run generate-icons.ts"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.268",
+    "@types/bun": "latest"
+  },
+  "private": true,
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
